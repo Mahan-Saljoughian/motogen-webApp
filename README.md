@@ -1,2 +1,0 @@
-# motogen-webApp
-PWA launch
