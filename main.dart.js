@@ -31972,7 +31972,7 @@ return}if(a instanceof A.hQ){o.bB(0,new A.m4(q,r,!1))
 return}if(J.d(v.G.window.navigator.onLine,!1))o.bB(0,new A.m4(q,r,!1))
 p=J.mW(a)
 s=p.j(a)
-if(B.c.v(s,"Failed to fetch")||B.c.v(s,"net::ERR_NAME_NOT_RESOLVED")){o.bB(0,new A.m4(q,r,!1))
+if(B.c.v(s,"Failed to fetch")||B.c.v(s,"net::ERR_INTERNET_DISCONNECTED")){o.bB(0,new A.m4(q,r,!1))
 return}o.bB(0,new A.m4(p.j(a),r,!1))},
 b_a:function b_a(){},
 m4:function m4(a,b,c){this.a=a
