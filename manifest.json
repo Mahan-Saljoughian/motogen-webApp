@@ -16,7 +16,7 @@
             "type": "image/png"
         },
         {
-            "src": "icons/motogen192.png",
+            "src": "icons/motogen512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
