@@ -25,11 +25,11 @@
             flex-direction: column;
         }
         .top-half {
-            height: 50vh;
+            flex: 1;
             background-color: #434D64; /* AppColors.blue400 */
         }
         .bottom-half {
-            height: 50vh;
+            flex: 1;
             background-color: #E8E9EC; /* AppColors.blue50 */
         }
         .center-container {
@@ -39,44 +39,46 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            padding: 0 50px;
+            padding: 0 5vw;
         }
         .box {
-            min-width: 960px;
+            width: 100%;
+            max-width: 960px;
             min-height: 400px;
             background-color: #E8E9EC; /* AppColors.blue50 */
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
-            padding: 50px 40px;
+            padding: 5vh 4vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
         .logo {
-            width: auto; /* Adjust as needed */
+            width: 20vw;
+            max-width: 200px;
             height: auto;
         }
         .title {
             color: #14213D; /* AppColors.blue500 */
             font-size: 20px;
             font-weight: 500;
-            margin-top: 10px;
+            margin-top: 1vh;
         }
         .main-text {
             color: #14213D; /* AppColors.blue500 */
             font-size: 15px;
             font-weight: 500;
-            margin-top: 30px;
+            margin-top: 3vh;
         }
         .help-section {
-            margin-top: 53px;
+            margin-top: 5vh;
             width: 100%;
         }
         .help-row {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 3vh;
         }
         .help-icon {
             width: 24px;
@@ -92,21 +94,93 @@
             text-align: right;
         }
         .safari-section {
-            margin-top: 17px;
+            margin-top: 2vh;
         }
         .safari-icon {
-            width: auto;
+            width: 10vw;
+            max-width: 100px;
             height: auto;
         }
         .safari-text {
             color: #14213D;
             font-size: 10px;
             font-weight: 400;
-            margin-top: 11px;
+            margin-top: 1vh;
         }
         /* Hide by default */
         #desktop-ui, #android-ui, #ios-not-safari-ui, #ios-safari-ui {
             display: none;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .center-container {
+                padding: 0 3vw;
+            }
+            .box {
+                min-height: auto;
+                padding: 4vh 3vw;
+                border-radius: 10px;
+            }
+            .logo {
+                width: 30vw;
+                max-width: 150px;
+            }
+            .title {
+                font-size: 18px;
+            }
+            .main-text {
+                font-size: 14px;
+            }
+            .help-section {
+                margin-top: 4vh;
+            }
+            .help-row {
+                margin-bottom: 2vh;
+            }
+            .help-text {
+                font-size: 12px;
+            }
+            .safari-section {
+                margin-top: 1.5vh;
+            }
+            .safari-text {
+                font-size: 9px;
+            }
+            .help-icon {
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
+            }
+            .help-icon[style*="font-size"] {
+                font-size: 10px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                padding: 3vh 2vw;
+            }
+            .logo {
+                width: 40vw;
+                max-width: 120px;
+            }
+            .title {
+                font-size: 16px;
+            }
+            .main-text {
+                font-size: 13px;
+            }
+            .help-text {
+                font-size: 11px;
+            }
+            .safari-icon {
+                width: 15vw;
+                max-width: 80px;
+            }
+            .safari-text {
+                font-size: 8px;
+            }
         }
     </style>
 </head>
