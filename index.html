@@ -1,48 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/motogen-webApp/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-   <meta name="description" content="Motogen Progressive Web App">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Motogen">
-
-<!-- iOS specific apple-touch-icon tags -->
-<link rel="apple-touch-icon" sizes="120x120" href="icons/motogen120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/motogen152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icons/motogen180.png">
-<link rel="apple-touch-icon" sizes="192x192" href="icons/motogen192.png">
-<link rel="apple-touch-icon" sizes="512x512" href="icons/motogen512.png">
-
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/motogen192.png"/>
-<!--   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon48.png">
- -->
-  <title>motogen</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موتوژن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Alexandria', sans-serif;
+            overflow: hidden;
+            direction: rtl;
+            text-align: right;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-half {
+            height: 50vh;
+            background-color: #434D64; /* AppColors.blue400 */
+        }
+        .bottom-half {
+            height: 50vh;
+            background-color: #E8E9EC; /* AppColors.blue50 */
+        }
+        .center-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 0 50px;
+        }
+        .box {
+            min-width: 960px;
+            min-height: 400px;
+            background-color: #E8E9EC; /* AppColors.blue50 */
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .logo {
+            width: auto; /* Adjust as needed */
+            height: auto;
+        }
+        .title {
+            color: #14213D; /* AppColors.blue500 */
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        .main-text {
+            color: #14213D; /* AppColors.blue500 */
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 30px;
+        }
+        .help-section {
+            margin-top: 53px;
+            width: 100%;
+        }
+        .help-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .help-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            color: #14213D; /* For text icons */
+        }
+        .help-text {
+            color: #14213D; /* AppColors.blue500 */
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 12px; /* Since RTL, margin-right for spacing */
+            text-align: right;
+        }
+        .safari-section {
+            margin-top: 17px;
+        }
+        .safari-icon {
+            width: auto;
+            height: auto;
+        }
+        .safari-text {
+            color: #14213D;
+            font-size: 10px;
+            font-weight: 400;
+            margin-top: 11px;
+        }
+        /* Hide by default */
+        #desktop-ui, #android-ui, #ios-not-safari-ui, #ios-safari-ui {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+    <div class="background">
+        <div class="top-half"></div>
+        <div class="bottom-half"></div>
+    </div>
+    <div class="center-container">
+        <div class="box">
+            <img src="assets/logo_blue.svg" alt="لوگو موتوژن" class="logo">
+            <div class="title">موتوژن</div>
+            <div id="content-area"></div> <!-- Dynamic content will be injected here -->
+        </div>
+    </div>
+
+    <!-- Templates for different UIs (hidden) -->
+    <div id="desktop-ui" style="display: none;">
+        <div class="main-text">وب اپلیکیشن موتوژن تنها از طریق موبایل قابل دسترس می‌باشد.</div>
+    </div>
+
+    <div id="android-ui" style="display: none;">
+        <div class="main-text">شما می‌توانید وب اپلیکیشن موتوژن را به صفحه اصلی خود اضافه کنید.</div>
+        <div class="help-section">
+            <div class="help-row">
+                <i class="material-icons help-icon">more_vert</i>
+                <div class="help-text">روی دکمه منو (سه نقطه) در بالا سمت راست ضربه بزنید.</div>
+            </div>
+            <div class="help-row">
+                <i class="material-icons help-icon">add_to_home_screen</i>
+                <div class="help-text">گزینه "Add to home screen" یا "Install app" را انتخاب کنید.</div>
+            </div>
+            <div class="help-row">
+                <span class="help-icon" style="font-size: 12px; font-weight: 700;">Add</span>
+                <div class="help-text">در مرحله بعد روی "Add" یا "Install" بزنید.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ios-not-safari-ui" style="display: none;">
+        <div class="main-text">وب اپلیکیشن موتوژن در تلفن همراه شما، تنها از طریق مرورگر سافاری (Safari) قابل دسترسی است.</div>
+        <div class="safari-section">
+            <img src="assets/safari.svg" alt="سافاری" class="safari-icon">
+            <div class="safari-text">نصب مرورگر Safari</div>
+        </div>
+    </div>
+
+    <div id="ios-safari-ui" style="display: none;">
+        <div class="main-text">شما می‌توانید وب اپلیکیشن موتوژن را به صفحه اصلی خود اضافه کنید.</div>
+        <div class="help-section">
+            <div class="help-row">
+                <i class="material-icons help-icon">ios_share</i>
+                <div class="help-text">در نوار پایین بر روی دکمه share بزنید.</div>
+            </div>
+            <div class="help-row">
+                <img src="assets/add_help_square.svg" alt="اضافه کردن" class="help-icon">
+                <div class="help-text">در منوی باز شده گزینه Add to home screen را انتخاب کنید.</div>
+            </div>
+            <div class="help-row">
+                <span class="help-icon" style="font-size: 12px; font-weight: 700;">Add</span>
+                <div class="help-text">در مرحله بعد در قسمت بالا روی Add بزنید.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function detectDevice() {
+            const ua = navigator.userAgent.toLowerCase();
+            const isMobileDevice = /iphone|ipad|ipod|android/.test(ua);
+            const isIOSDevice = /iphone|ipad|ipod/.test(ua);
+            const isSafariBrowser = ua.includes('safari') && !ua.includes('chrome') && !ua.includes('crios') && !ua.includes('fxios');
+
+            let uiToShow;
+            if (!isMobileDevice) {
+                uiToShow = 'desktop-ui';
+            } else if (!isIOSDevice) {
+                // Assume Android
+                uiToShow = 'android-ui';
+            } else if (!isSafariBrowser) {
+                uiToShow = 'ios-not-safari-ui';
+            } else {
+                uiToShow = 'ios-safari-ui';
+            }
+
+            const contentArea = document.getElementById('content-area');
+            const uiElement = document.getElementById(uiToShow);
+            if (uiElement) {
+                contentArea.innerHTML = uiElement.innerHTML;
+            }
+        }
+
+        // Run detection on load
+        window.onload = detectDevice;
+    </script>
 </body>
 </html>
