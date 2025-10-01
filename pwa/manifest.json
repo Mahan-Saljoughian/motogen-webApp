@@ -1,8 +1,8 @@
 {
   "name": "Motogen App",
   "short_name": "Motogen",
-    "start_url": "/motogen-webApp/",
-    "scope": "/motogen-webApp/",
+    "start_url": "/motogen-webApp/pwa/",
+    "scope": "/motogen-webApp/pwa/",
     "display": "standalone",
     "background_color": "#14213D",
     "theme_color": "#14213D",

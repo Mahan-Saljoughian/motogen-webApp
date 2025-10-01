@@ -200,6 +200,12 @@
     <!-- Templates for different UIs (hidden) -->
     <div id="desktop-ui" style="display: none;">
         <div class="main-text">وب اپلیکیشن موتوژن تنها از طریق پلتفرم ios قابل دسترس می‌باشد.</div>
+        <div style="margin-top: 3vh;">
+        <button id="openAppBtn" style="background-color:#14213D;color:#fff;padding:12px 20px;border:none;
+            border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;">
+            ورود به اپلیکیشن
+        </button>
+    </div>
     </div>
 
     <div id="android-ui" style="display: none;">
@@ -211,7 +217,6 @@
         <div class="main-text">وب اپلیکیشن موتوژن در تلفن همراه شما، تنها از طریق مرورگر سافاری (Safari) قابل دسترسی است.</div>
         <div class="safari-section">
             <img src="assets/safari.svg" alt="سافاری" class="safari-icon">
-            <div class="safari-text">نصب مرورگر Safari</div>
         </div>
     </div>
 
@@ -231,6 +236,13 @@
                 <div class="help-text">در مرحله بعد در قسمت بالا روی Add بزنید.</div>
             </div>
         </div>
+        <!-- New button to open Flutter PWA -->
+    <div style="margin-top: 3vh;">
+        <button id="openAppBtn" style="background-color:#14213D;color:#fff;padding:12px 20px;border:none;
+            border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;">
+            ورود به اپلیکیشن
+        </button>
+    </div>
     </div>
 
     <script>
@@ -257,10 +269,16 @@
             if (uiElement) {
                 contentArea.innerHTML = uiElement.innerHTML;
             }
+            const openAppBtn = document.getElementById('openAppBtn');
+    if (openAppBtn) {
+        openAppBtn.addEventListener('click', function() {
+            window.location.href = '/motogen-webApp/pwa/';
+        });
+    }
         }
 
-        // Run detection on load
-        window.onload = detectDevice;
+        // Run detection on DOM ready
+       document.addEventListener('DOMContentLoaded', detectDevice);
     </script>
 </body>
 </html>
