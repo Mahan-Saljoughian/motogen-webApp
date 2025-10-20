@@ -37,6 +37,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Motogen">
 
+  <!-- Force portrait orientation on iOS PWA -->
+<meta name="apple-mobile-web-app-orientations" content="portrait">
+<meta name="orientation" content="portrait">
+
+<!-- Android Chrome / WebView hint -->
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+
+
 <!-- iOS specific apple-touch-icon tags -->
 <link rel="apple-touch-icon" sizes="120x120" href="icons/motogen120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icons/motogen152.png">
@@ -52,6 +61,14 @@
  -->
   <title>motogen</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color:transparent; /* or your desired app background */
+  }
+</style>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
