@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/motogen-webApp/pwa/">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
    <meta name="description" content="Motogen Progressive Web App">
 
-    <script>
+   <script>
     (function() {
       const ua = navigator.userAgent.toLowerCase();
       const isMobileDevice = /iphone|ipad|ipod/.test(ua);
@@ -23,6 +37,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Motogen">
 
+
+
 <!-- iOS specific apple-touch-icon tags -->
 <link rel="apple-touch-icon" sizes="120x120" href="icons/motogen120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icons/motogen152.png">
@@ -38,6 +54,8 @@
  -->
   <title>motogen</title>
   <link rel="manifest" href="manifest.json">
+
+  
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
