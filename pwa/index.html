@@ -23,11 +23,11 @@
    <script>
     (function() {
       const ua = navigator.userAgent.toLowerCase();
-      const isMobileDevice = /iphone|ipad|ipod/.test(ua);
-      /* if (!isMobileDevice) {
+      const isIOSDevice = /iphone|ipad|ipod/.test(ua);
+      if (!isIOSDevice) {
         // Redirect back to first page
         window.location.href = '/';
-      } */
+      }
     })();
   </script>
 
